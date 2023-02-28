@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "290743268705",
+    "project_id": "idance-66f3e",
+    "storage_bucket": "idance-66f3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290743268705:android:926824fc6d6fe314594120",
+        "android_client_info": {
+          "package_name": "com.example.idance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290743268705-66trf2u77saeakivojs9t7rcoki1lmik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1eusTiHHAYv4_iIqOxFnzIGOVHDhKzYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290743268705-66trf2u77saeakivojs9t7rcoki1lmik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
