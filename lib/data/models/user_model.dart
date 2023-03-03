@@ -1,20 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserData {
-  User? _user;
+  User? user;
 
-  UserData(this._user);
+  UserData({this.user});
 
-  User? get user => _user;
+  User? get _user => user;
 
-  set user(User? value) {
-    _user = value;
+  set _user(User? value) {
+    user = value;
   }
 
 
   factory UserData.fromFirebaseUser(User user) {
     return UserData(
-      user
+      user: user,
     );
   }
 }

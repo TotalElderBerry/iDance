@@ -151,6 +151,38 @@ class MockAuthRepository extends _i1.Mock implements _i4.AuthRepository {
           ),
         )),
       ) as _i5.Future<_i2.UserData>);
+  @override
+  _i5.Future<void> logout() => (super.noSuchMethod(
+        Invocation.method(
+          #logout,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+  @override
+  _i5.Future<_i2.UserData> getCurrentUser() => (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentUser,
+          [],
+        ),
+        returnValue: _i5.Future<_i2.UserData>.value(_FakeUserData_0(
+          this,
+          Invocation.method(
+            #getCurrentUser,
+            [],
+          ),
+        )),
+      ) as _i5.Future<_i2.UserData>);
+  @override
+  _i5.Future<void> changePassword() => (super.noSuchMethod(
+        Invocation.method(
+          #changePassword,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }
 
 /// A class which mocks [UserData].
@@ -162,10 +194,10 @@ class MockUserData extends _i1.Mock implements _i2.UserData {
   }
 
   @override
-  set user(_i3.User? value) => super.noSuchMethod(
+  set user(_i3.User? _user) => super.noSuchMethod(
         Invocation.setter(
           #user,
-          value,
+          _user,
         ),
         returnValueForMissingStub: null,
       );

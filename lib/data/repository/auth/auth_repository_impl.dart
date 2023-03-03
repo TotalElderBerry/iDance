@@ -18,9 +18,9 @@ class AuthRepositoryImpl implements AuthRepository{
   }
 
   @override
-  Future<void> logout() {
+  Future<void> logout() async {
     // TODO: implement logout
-    throw UnimplementedError();
+    await _fireBaseAuth.logout();
   }
 
   @override
@@ -28,6 +28,18 @@ class AuthRepositoryImpl implements AuthRepository{
     // TODO: implement register
     UserData ?user = await _fireBaseAuth.register(email, password);
     return user;
+  }
+  
+  @override
+  Future<void> changePassword() {
+    // TODO: implement changePassword
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<UserData> getCurrentUser() {
+    // TODO: implement getCurrentUser
+    throw UnimplementedError();
   }
 
 }

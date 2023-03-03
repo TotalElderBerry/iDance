@@ -22,9 +22,9 @@ class FireBaseAuth extends FireBaseAuthSource {
   }
 
   @override
-  Future<void> logout() {
+  Future<void> logout() async {
     // TODO: implement logout
-    throw UnimplementedError();
+    await _fireBaseAuth.signOut();
   }
 
   @override
