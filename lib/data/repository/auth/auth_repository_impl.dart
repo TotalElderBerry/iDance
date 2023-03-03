@@ -1,10 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:idance/data/data_sources/auth/firebase_auth.dart';
+import 'package:idance/data/models/user_model.dart';
 import 'package:idance/domain/repository/auth/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository{
+
+  final FireBaseAuth _fireBaseAuth;
+
+  AuthRepositoryImpl(this._fireBaseAuth);
+
+
   @override
-  Future<void> login(String email, String password) {
+  Future<UserData> login(String email, String password) async {
     // TODO: implement login
-    throw UnimplementedError();
+    UserData ?user = await _fireBaseAuth.login(email, password);
+    return user;
   }
 
   @override
@@ -14,9 +24,10 @@ class AuthRepositoryImpl implements AuthRepository{
   }
 
   @override
-  Future<void> register() {
+  Future<UserData> register(String email, String password) async {
     // TODO: implement register
-    throw UnimplementedError();
+    UserData ?user = await _fireBaseAuth.register(email, password);
+    return user;
   }
 
 }

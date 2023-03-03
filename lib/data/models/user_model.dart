@@ -1,18 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserData {
-  final String id;
-  final String email;
+  User? _user;
 
-  UserData({
-    required this.id,
-    required this.email,
-  });
+  UserData(this._user);
+
+  User? get user => _user;
+
+  set user(User? value) {
+    _user = value;
+  }
+
 
   factory UserData.fromFirebaseUser(User user) {
     return UserData(
-      id: user.uid,
-      email: user.email!,
+      user
     );
   }
 }
