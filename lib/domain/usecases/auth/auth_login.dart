@@ -1,4 +1,5 @@
-import 'package:idance/data/models/user_model.dart';
+import 'dart:async';
+import 'package:idance/data/models/user_auth_model.dart';
 import 'package:idance/domain/entities/user.dart';
 import 'package:idance/domain/repository/auth/auth_repository.dart';
 

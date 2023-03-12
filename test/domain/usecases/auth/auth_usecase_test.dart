@@ -1,10 +1,11 @@
   import 'package:firebase_auth/firebase_auth.dart';
   import 'package:flutter_test/flutter_test.dart';
 
-  import 'package:idance/data/models/user_model.dart';
+  import 'package:idance/data/models/user_auth_model.dart';
+  import 'package:idance/domain/entities/user_params.dart';
   import 'package:idance/domain/repository/auth/auth_repository.dart';
   import 'package:idance/domain/usecases/auth/auth_login.dart';
-import 'package:idance/domain/usecases/auth/auth_logout.dart';
+  import 'package:idance/domain/usecases/auth/auth_logout.dart';
   import 'package:idance/domain/usecases/auth/auth_register.dart';
   import 'package:mockito/mockito.dart';
   import 'package:mockito/annotations.dart';
@@ -54,23 +55,22 @@ import 'package:idance/domain/usecases/auth/auth_logout.dart';
     test(
       'should register a user',
       () async {
-        const email = 'register@test.com';
-        const password = 'register12345';
+        UserParams user = UserParams("test", "test", "test", "t", 111, "as", ["null"]);
         final userModel = MockUser();
 
-        when(mockAuthRepository.register(email, password)).thenAnswer((realInvocation)async {
+        when(mockAuthRepository.register(user)).thenAnswer((realInvocation)async {
           return mockUserData;
         });
         when(mockUserData.user).thenReturn(userModel);
         when(userModel.uid).thenReturn('123');
-        when(userModel.email).thenReturn(email);
+        when(userModel.email).thenReturn(user.email);
         //act
-        final result = await authRegisterusecase.execute(email, password);
+        final result = await authRegisterusecase.execute(user);
 
         //assert
         expect(result.id, userModel.uid);
         expect(result.email, userModel.email);
-        verify(mockAuthRepository.register(email, password));
+        verify(mockAuthRepository.register(user));
       }
     );
     
